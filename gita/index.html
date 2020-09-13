@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Welcome to Gita Abhyasa</title>
+    <meta name="description" content="">
+
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!--, maximum-scale=1.0, user-scalable=no">-->
+
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../scripts/angular.js" type="text/javascript"></script>    
+    <script src="../scripts/angular-resource.js" type="text/javascript"></script>    
+    <script src="../scripts/angular-cookies.js" type="text/javascript"> </script>
+    <script src="../scripts/myAngular.js" type="text/javascript"> </script>    
+    <script src="../scripts/app.js" type="text/javascript"> </script>
+
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 479px)" href="../styles/small-devices.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 480px) and (max-device-width: 767px)" href="../styles/mobile.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 768px) and (max-device-width: 991px)" href="../styles/tablet.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 992px) and (max-device-width: 1199px)" href="../styles/finer-tablet.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1200px)" href="../styles/main.css">
+   
+</head>
+<body ng-app="gitaApp" onresize="setSidebarActive();">
+    <div class="container-fluid" id="main">
+        <div class="row">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div id="navBarHeader" class="navbar-header" ng-controller="toggleController as ctrl">
+                        <button id="toggleButton" type="button" class="navbar-toggle" data-toggle="offcanvas"
+                                data-target=".sidebar-nav" ng-click="ctrl.toggleActive();">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Welcome to Gita abhyasa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <div class="panel-group" id="accordion8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion10" href="#intro">
+                                    Brief Description
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="intro" class="panel-collapse collapse in">
+                            <div id="sanskrit" class="panel-body">
+                                <p>
+                                    The purpose of this website is to help aspirants to learn gita by viewing the slokas in sanskrit &amp; english together with their meanings. They can also listen to the chanting of individual slokas.
+                                    <br />
+                                    English version of the slokas &amp; their meanings are attributable to Pujya Guru Sivananda Swamiji of "Divine Life Society".
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="chapterDiv" class="row-offcanvas" ng-controller="chapterController as chapterctrl">
+                <div ng-if="chapterctrl.isActive()" class="col-xs-2 sidebar-offcanvas" id="sidebar" role="navigation">
+                    <ul class="nav" id="chapter-menu-collapse">
+                        <li ng-repeat='chapter in chapterctrl.getChapters()' ng-click="chapterctrl.chapterChanged(this.$index);"
+                            ng-class="{currentActive:chapterctrl.activeLink(this.$index), mouseOver:hover}"
+                            ng-mouseover="hover=true" ng-mouseleave="hover=false" onclick="stopPlay();">
+                            {{chapter}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="slokaList" ng-class="{'col-xs-10': chapterctrl.isActive(), 'col-xs-12': !chapterctrl.isActive()}">
+                    <div id="slokaDiv" ng-controller="slokaController as sloka">
+                        <div>
+                            <table>
+                                <tbody>
+                                    <tr>
+
+                                        <td>
+                                            <label>
+                                                <span class="label label-primary"> {{sloka.getChapterName()}}</span>
+                                            </label>
+                                        </td>
+
+                                        <td>
+                                            <button ng-click="sloka.decrementSloka()" class="btn btn-default btn-sm" aria-label="Center Align" onclick="stopPlay();">
+                                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                            </button>
+                                        </td>
+
+                                        <td>
+                                            <label>
+                                                <span class="label label-primary">Sloka: {{sloka.getSloka()}}</span>
+                                            </label>
+                                        </td>
+
+                                        <td>
+                                            <button ng-click="sloka.incrementSloka()" class="btn btn-default btn-sm" onclick="stopPlay();">
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </button>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">
+                                                Sanskrit
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse in">
+                                        <div id="sanskrit" class="panel-body" ng-bind-html="sloka.sanskrit|sanitize"> </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+                                                English
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <div class="panel-body" ng-bind-html="sloka.english|sanitize"> </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3">
+                                                Meaning
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                        <div class="panel-body" ng-bind-html="sloka.meaning|sanitize">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion4" href="#collapse4">
+                                                Audio
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <button type="button" id="btnPlayOne" class="btn btn-default btn-sm" onclick="playOneSloka()">
+                                                            <span class="glyphicon glyphicon-play"></span> Play
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" id="btnPlayAll" class="btn btn-default btn-sm" onclick="playAllSlokas()">
+                                                            <span class="glyphicon glyphicon-play"></span> Play All
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" id="btnStop" class="btn btn-default btn-sm" disabled onclick="stopPlay()">
+                                                            <span class="glyphicon glyphicon-stop"></span> Stop
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <audio id="slokaAudio" controls>
+                                                            <source>audio content cannot be played </source>
+                                                        </audio>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion5" href="#collapse5">
+                                                    Download
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse5" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>
+                                                    You can right click on the hyperlink below and select "Save As" optionto download the audio
+                                                    content to your device
+                                                </p>
+                                                <p>
+                                                    <ul>
+                                                        <li> <a ng-href="{{sloka.getChapterAudioURL()}}" target="_blank">Download Chapter</a> </li>
+                                                        <li> <a ng-href="{{sloka.getSlokaAudioURL()}}" target="_blank">Download Sloka</a> </li>
+                                                    </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

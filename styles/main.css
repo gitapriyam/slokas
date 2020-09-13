@@ -1,0 +1,55 @@
+body {
+    font-family: Verdana, sans-serif;
+    color: #666666;
+    letter-spacing: 0.8px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+h2 {
+    margin-top: 0px;
+    color: #F07C17;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.currentActive {
+    color: white;
+    background-color: blue;
+}
+
+.container {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mouseOver {
+    color: white;
+    background-color: green;
+    border: 1px solid blue;
+}
+
+.chapter {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+#sidebar {
+    height: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.panel-heading {
+    padding-left: 5px;
+    padding-right: 5px; 
+}
+
+.panel-body {
+    padding-left: 5px;
+    padding-right: 5px; 
+}

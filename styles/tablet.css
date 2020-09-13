@@ -1,0 +1,73 @@
+body {
+    font-family: Verdana, sans-serif;
+    color: #666666;
+    letter-spacing: 0.8px;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.container {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#main {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.sidebar h2 {
+    margin-top: 0px;
+    color: #F07C17;
+    font-weight: bold;
+    /*font-size: 10px;*/
+}
+
+
+.currentActive {
+    color: white;
+    background-color: blue;
+}
+
+.row {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mouseOver {
+    color: white;
+    background-color: green;
+    border: 1px solid blue;
+}
+
+.chapter {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+#sidebar {
+    height: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#slokaList {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.panel-heading {
+    padding-left: 5px;
+    padding-right: 5px; 
+}
+
+.panel-body {
+    padding-left: 5px;
+    padding-right: 5px; 
+}
