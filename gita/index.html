@@ -17,7 +17,7 @@
     <script src="../scripts/myAngular.js" type="text/javascript"> </script>    
     <script src="../scripts/app.js" type="text/javascript"> </script>
 
-    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css"> 
     <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 479px)" href="../styles/small-devices.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 480px) and (max-device-width: 767px)" href="../styles/mobile.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 768px) and (max-device-width: 991px)" href="../styles/tablet.css">
@@ -136,7 +136,7 @@
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse2" class="panel-collapse collapse">
+                                    <div id="collapse2" class="panel-collapse collapse in">
                                         <div class="panel-body" ng-bind-html="sloka.english|sanitize"> </div>
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse3" class="panel-collapse collapse">
+                                    <div id="collapse3" class="panel-collapse collapse in">
                                         <div class="panel-body" ng-bind-html="sloka.meaning|sanitize">
                                         </div>
                                     </div>
@@ -203,13 +203,13 @@
                                         <div id="collapse5" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <p>
-                                                    You can right click on the hyperlink below and select "Save As" optionto download the audio
-                                                    content to your device
+                                                    You should be able to download the audio files to your device. Download methodology depends
+                                                    on the device used.
                                                 </p>
                                                 <p>
                                                     <ul>
-                                                        <li> <a ng-href="{{sloka.getChapterAudioURL()}}" target="_blank">Download Chapter</a> </li>
-                                                        <li> <a ng-href="{{sloka.getSlokaAudioURL()}}" target="_blank">Download Sloka</a> </li>
+                                                        <li> <a ng-href="{{sloka.getChapterAudioURL()}}" target="_blank">Download Chapter Audio</a> </li>
+                                                        <li> <a ng-href="{{sloka.getSlokaAudioURL()}}" target="_blank">Download Sloka Audio</a> </li>
                                                     </ul>
                                                 </p>
                                             </div>
