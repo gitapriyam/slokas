@@ -18,10 +18,10 @@
             'Dasakam 39', 'Dasakam 40', 'Dasakam 41', 'Dasakam 42', 'Dasakam 43', 'Dasakam 44', 'Dasakam 45', 'Dasakam 46',
             'Dasakam 47', 'Dasakam 48', 'Dasakam 49', 'Dasakam 50', 'Dasakam 51', 'Dasakam 52', 'Dasakam 53', 'Dasakam 54',
             'Dasakam 55', 'Dasakam 56', 'Dasakam 57', 'Dasakam 58', 'Dasakam 59', 'Dasakam 60', 'Dasakam 61', 'Dasakam 62',
-            'Dasakam 63', 'Dasakam 64', 'Dasakam 65', 'Dasakam 66', 'Dasakam 67', 'Dasakam 68', 'Dasakam 69', 'Dasakam 70', 
-            'Dasakam 71', 'Dasakam 72', 'Dasakam 73', 'Dasakam 74', 'Dasakam 75', 'Dasakam 76', 'Dasakam 77', 'Dasakam 78', 
-            'Dasakam 79', 'Dasakam 80', 'Dasakam 81', 'Dasakam 82', 'Dasakam 83', 'Dasakam 84', 'Dasakam 85', 'Dasakam 86', 
-            'Dasakam 87', 'Dasakam 88', 'Dasakam 89', 'Dasakam 90', 'Dasakam 91', 'Dasakam 92', 'Dasakam 93', 'Dasakam 94', 
+            'Dasakam 63', 'Dasakam 64', 'Dasakam 65', 'Dasakam 66', 'Dasakam 67', 'Dasakam 68', 'Dasakam 69', 'Dasakam 70',
+            'Dasakam 71', 'Dasakam 72', 'Dasakam 73', 'Dasakam 74', 'Dasakam 75', 'Dasakam 76', 'Dasakam 77', 'Dasakam 78',
+            'Dasakam 79', 'Dasakam 80', 'Dasakam 81', 'Dasakam 82', 'Dasakam 83', 'Dasakam 84', 'Dasakam 85', 'Dasakam 86',
+            'Dasakam 87', 'Dasakam 88', 'Dasakam 89', 'Dasakam 90', 'Dasakam 91', 'Dasakam 92', 'Dasakam 93', 'Dasakam 94',
             'Dasakam 95', 'Dasakam 96', 'Dasakam 97', 'Dasakam 98', 'Dasakam 99', 'Dasakam 100'];
 
         self.dasakam = 0;
@@ -84,6 +84,7 @@
         }
 
         self.playSloka = function (index, url) {
+            self.stopOtherAudio(index);
             audio = self.getControl("audio" + index);
             audio.src = url;
             audio.play();
@@ -95,6 +96,15 @@
             btnPlay.disabled = true;
             btnStop = self.getControl("btnStop" + index);
             btnStop.disabled = false;
+        }
+
+        self.stopOtherAudio = function () {
+            $("audio").each(function (index) {
+                audio = self.getControl("audio" + index);
+                audio.pause();
+                audio.currentTime = 0;
+                self.enablePlay(index);
+            });
         }
 
         self.enablePlay = function (index) {
