@@ -58,10 +58,11 @@
                         <div id="intro" class="panel-collapse collapse in">
                             <div id="sanskrit" class="panel-body">
                                 <p>
-                                    We provide resources for the aspirant to learn Narayaneeyam. The sanskrit sloka text is
-                                    from <a href="http://narayaneeyam-firststep.org/" target="_new">http://narayaneeyam-firststep.org/</a> together with audio recording for practicing chanting.
-                                    For other languages please visit <a href="https://www.prapatti.com/categories/naaraayaniiyam.php" target="_new">www.prapatti.com</a>.
-                                    This is a work in progress. Audio for Dasakam's 75 & above will not work for now.
+                                    This site provides resources for the aspirant to learn Narayaneeyam. 
+                                    For sloka text in different languages please visit 
+                                    <a href="https://www.prapatti.com/categories/naaraayaniiyam.php" target="_new">prapatti.com</a>.
+                                    This is a work in progress. Audio for Dasakam's 76 & above are being recorded
+                                    and will be made available shortly.
                                 </p>
                             </div>
                         </div>
@@ -87,9 +88,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr ng-repeat='dasakam in ctrl.getDasakams()'>
-                                                    <td><a href='{{ctrl.getSlokaResourceUrl(this.$index)}}'
-                                                            target="_remote">{{ctrl.getDasakamName(this.$index)}}</a>
-                                                    </td>
+                                                    <td>{{ctrl.getDasakamName(this.$index)}} </td>
                                                     <td>
                                                         <button id='{{"btnPlay"+ this.$index}}'
                                                             class="btn btn-default btn-sm"
