@@ -35,7 +35,7 @@
         };
 
         return {
-            getResourceUrl(){
+            getResourceUrl() {
                 return self.resourceUrl;
             },
             setChapter: function (chap) {
@@ -163,6 +163,7 @@
         self.sanskrit = "";
         self.english = "";
         self.meaning = "";
+        self.maxSloka = 1;
         $scope.navbarCollapsed = true;
 
 
@@ -170,6 +171,8 @@
             chapterService.setSloka(1);
             self.addCookie("chapter", value);
             self.addCookie("sloka", 1);
+            self.maxSloka = chapterService.getNumberOfSlokas();
+            $scope.searchSloka = chapterService.getSloka();
             self.fetchData();
         });
 
@@ -188,28 +191,47 @@
                 setTimeout((function (currentType) {
                     return function () {
                         $http.get(chapterService.getURL(currentType))
-                        .success(function (data) {
-                            if (currentType === 'sanskrit') {
-                                self.sanskrit = data;
-                            }
-                            else if (currentType === 'english') {
-                                self.english = data;
-                            }
-                            else if (currentType === 'meaning') {
-                                self.meaning = data;
-                            }
-                        });
+                            .success(function (data) {
+                                if (currentType === 'sanskrit') {
+                                    self.sanskrit = data;
+                                }
+                                else if (currentType === 'english') {
+                                    self.english = data;
+                                }
+                                else if (currentType === 'meaning') {
+                                    self.meaning = data;
+                                }
+                            });
                     };
                 })(type), 500);
             }
         };
 
-        self.setSloka = function () {
-            if (chapterService.getSloka() <= self.numSlokas) {
-                self.fetchData('sanskrit');
+        self.isInputValid = function () {
+            if (!$scope.searchSloka) {
+                return false;
             }
+            return true;
+        }
+
+        self.setCookie = function () {
+            self.addCookie("chapter", chapterService.getChapter());
+            self.addCookie("sloka", chapterService.getSloka());
+        }
+
+        self.setSloka = function () {
+            if (!self.isInputValid()) {
+                return;
+            }
+            
+            chapterService.setSloka($scope.searchSloka);
+            self.setCookie();
+            self.fetchData();
         };
 
+        self.getMaxSlokas = function () {
+            return chapterService.getNumberOfSlokas();
+        };
 
         self.addCookie = function (name, value) {
             var expireDate = new Date();
@@ -232,10 +254,9 @@
                     currentChapter = 0;
                 }
                 chapterService.setChapter(currentChapter);
-
             }
-            self.addCookie("chapter", currentChapter);
-            self.addCookie("sloka", currentSloka);
+            self.setCookie();
+            $scope.searchSloka = currentSloka;
             self.fetchData();
         };
 
@@ -258,6 +279,7 @@
             }
             self.addCookie("chapter", currentChapter);
             self.addCookie("sloka", currentSloka);
+            $scope.searchSloka = currentSloka;
             self.fetchData();
         };
 
@@ -275,7 +297,8 @@
                 sloka = 1;
             };
             chapterService.setSloka(sloka);
-
+            $scope.searchSloka = sloka;
+            self.maxSloka = chapterService.getNumberOfSlokas();
             self.fetchData();
         };
 
