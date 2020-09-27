@@ -1,36 +1,49 @@
 <html>
-    <head>
-    <title>Welcome to Gita Abhyasa</title>
+
+<head>
+    <title>Welcome to Vishnu SahasraNamam</title>
     <meta name="description" content="">
 
     <!-- Mobile viewport optimized -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!--, maximum-scale=1.0, user-scalable=no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--, maximum-scale=1.0, user-scalable=no">-->
 
-    <link rel="stylesheet" href="../styles/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 479px)" href="../styles/small-devices.css">
-    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 480px) and (max-device-width: 767px)" href="../styles/mobile.css">
-    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 768px) and (max-device-width: 991px)" href="../styles/tablet.css">
-    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 992px) and (max-device-width: 1199px)" href="../styles/finer-tablet.css">
-    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1200px)" href="../styles/main.css">
-    </head>
-    <body>
-        <div class="container-fluid" id="main">
-            <div class="row">
-                <div class="navbar navbar-default" role="navigation">
-                    <div class="container">
-                        <div id="navBarHeader" class="navbar-header" ng-controller="toggleController as ctrl">
-                            <button id="toggleButton" type="button" class="navbar-toggle" data-toggle="offcanvas"
-                                    data-target=".sidebar-nav" ng-click="ctrl.toggleActive();">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="#">Welcome to Gita abhyasa</a>
-                        </div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../scripts/angular.js" type="text/javascript"></script>
+    <script src="../scripts/angular-resource.js" type="text/javascript"></script>
+    <script src="../scripts/angular-cookies.js" type="text/javascript"> </script>
+
+    <Link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <Link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 479px)"
+        href="../styles/small-devices.css">
+    <Link rel="stylesheet" type="text/css" media="screen and (min-device-width: 480px) and (max-device-width: 767px)"
+        href="../styles/mobile.css">
+    <Link rel="stylesheet" type="text/css" media="screen and (min-device-width: 768px) and (max-device-width: 991px)"
+        href="../styles/tablet.css" />
+    <Link rel="stylesheet" type="text/css" media="screen and (min-device-width: 992px) and (max-device-width: 1199px)"
+        href="../styles/finer-tablet.css" />
+    <Link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1200px)" href="../styles/main.css" />
+    <script src="../scripts/vishnu.js" type="text/javascript"> </script>
+</head>
+
+<body>
+    <div class="container-fluid" id="main">
+        <div class="row">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div id="navBarHeader" class="navbar-header" ng-controller="toggleController as ctrl">
+                        <button id="toggleButton" type="button" class="navbar-toggle" data-toggle="offcanvas"
+                            data-target=".sidebar-nav" ng-click="ctrl.toggleActive();">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Welcome to Vishnu SahasraNamam</a>
                     </div>
                 </div>
             </div>
-
+        </div>
         <div class="row">
             <div>
                 <div class="panel-group" id="accordion8">
@@ -38,38 +51,364 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion10" href="#intro">
-                                    Will be available shortly ..
+                                    Brief Description
                                 </a>
                             </h4>
+                        </div>
+                        <div id="intro" class="panel-collapse collapse in">
+                            <div id="sanskrit" class="panel-body">
+                                <p>
+                                    This site provides resources for the aspirant to learn Vishnu SahasraNamam.
+                                    We provide annotated sloka text sourced from <a
+                                        href="https://www.prapatti.com">Prapatti</a>
+                                    Additionally, we also provide recorded audio for the aspirant to learn this
+                                    stottram.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">
-                       Resources
-                    </a>
-                </h4>
-            </div>
-            <div class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Resource</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                      </table> 
+        <div class="row">
+            <div class="panel-group" id="accordion9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion11" href="#purva-bhaga">
+                                Purva Bhaga
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="purva-bhaga" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Document</th>
+                                        <th>Audio</th>
+                                        <th>Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/purva-bhaga.pdf"
+                                                target="_sloka">Sloka
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <button id='purva-bhaga-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('purva-bhaga')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='purva-bhaga-audio' style="display:none" hidden="true"></audio>
+                                            <button id='purva-bhaga-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('purva-bhaga')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/purva-bhaga.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel-group" id="accordion13">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion15" href="#sahasra">
+                                Sahasra Namam
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="sahasra" class="panel-collapse collapse in">
+                        <div class="panel-body">
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Document</th>
+                                        <th>Sloka</th>
+                                        <th>Audio</th>
+                                        <th>Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="9">
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/sahasra-nama.pdf"
+                                                target="_sloka">Sloka</a>
+
+                                        </td>
+                                        <td>
+                                            Sloka 01-12
+                                        </td>
+                                        <td>
+                                            <button id='vs-01-12-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-01-12')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-01-12-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-01-12-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-01-12')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-01-12.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 13-24
+                                        </td>
+                                        <td>
+                                            <button id='vs-13-24-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-13-24')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-13-24-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-13-24-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-13-24')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-13-24.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 25-36
+                                        </td>
+                                        <td>
+                                            <button id='vs-25-36-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-25-36')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-25-36-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-25-36-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-25-36')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-25-36.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 37-48
+                                        </td>
+                                        <td>
+                                            <button id='vs-37-48-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-37-48')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-37-48-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-37-48-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-37-48')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-37-48.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 49-60
+                                        </td>
+                                        <td>
+                                            <button id='vs-49-60-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-49-60')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-49-60-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-49-60-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-49-60')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-49-60.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 61-72
+                                        </td>
+                                        <td>
+                                            <button id='vs-61-72-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-61-72')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-61-72-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-61-72-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-61-72')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-61-72.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 73-84
+                                        </td>
+                                        <td>
+                                            <button id='vs-73-84-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-73-84')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-73-84-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-73-84-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-73-84')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-73-84.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 85-96
+                                        </td>
+                                        <td>
+                                            <button id='vs-85-96-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-85-96')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-85-96-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-85-96-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-85-96')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-85-96.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sloka 97-108
+                                        </td>
+                                        <td>
+                                            <button id='vs-97-108-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('vs-97-108')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='vs-97-108-audio' style="display:none" hidden="true"></audio>
+                                            <button id='vs-97-108-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('vs-97-108')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/vs-97-108.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1" href="#phala">
+                                Phala Sruthi
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="phala" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Document</th>
+                                        <th>Audio</th>
+                                        <th>Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/phala-sruthi.pdf"
+                                                target="_sloka">Sloka
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <button id='phala-sruthi-play' class="btn btn-default btn-sm"
+                                                onclick="playAudio('phala-sruthi')">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                                Play</button>
+                                            <audio id='phala-sruthi-audio' style="display:none" hidden="true"></audio>
+                                            <button id='phala-sruthi-stop' disabled class="btn btn-default btn-sm"
+                                                onclick="stopAudio('phala-sruthi')">
+                                                <span class="glyphicon glyphicon-stop"></span>
+                                                Stop</button>
+                                        </td>
+                                        <td>
+                                            <a href="https://slokastorage.blob.core.windows.net/vishnuresources/phala-sruthi.mp3"
+                                                target="_audio">
+                                                Link
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    </body>
+</body>
 
 </html>

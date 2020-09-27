@@ -100,7 +100,7 @@
 
         self.stopOtherAudio = function () {
             $("audio").each(function (index) {
-                audio = self.getControl("audio" + index);
+                audio = $(this)[0];
                 audio.pause();
                 audio.currentTime = 0;
                 self.enablePlay(index);
