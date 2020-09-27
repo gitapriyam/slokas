@@ -29,7 +29,6 @@
     <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 992px) and (max-device-width: 1199px)"
         href="../styles/finer-tablet.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1200px)" href="../styles/main.css">
-
 </head>
 
 <body ng-app="gitaApp" onresize="setSidebarActive();">
@@ -97,41 +96,41 @@
                             <table>
                                 <tbody>
                                     <tr>
-
                                         <td>
                                             <label>
                                                 <span class="label label-primary"> {{sloka.getChapterName()}}</span>
                                             </label>
                                         </td>
-
                                         <td>
                                             <button ng-click="sloka.decrementSloka()" class="btn btn-default btn-sm"
-                                                aria-label="Center Align" onclick="stopPlay();">
+                                                style="font-size:8px" aria-label="Center Align" onclick="stopPlay();">
                                                 <span class="glyphicon glyphicon-chevron-left"></span>
                                             </button>
                                         </td>
-
                                         <td>
                                             <label>
                                                 <span class="label label-primary">Sloka: {{sloka.getSloka()}}</span>
                                             </label>
                                         </td>
-
                                         <td>
-                                            <button ng-click="sloka.incrementSloka()" class="btn btn-default btn-sm"
+                                            <button ng-click="sloka.incrementSloka()" aria-label="Center Align"
+                                                style="font-size:8px" class="btn btn-default btn-sm"
                                                 onclick="stopPlay();">
                                                 <span class="glyphicon glyphicon-chevron-right"></span>
                                             </button>
-
                                         </td>
                                         <td>
-                                            <input type="number" style="width:4em;" in="1" max="{{sloka.getMaxSlokas()}}" 
-                                                id="slokaNum" ng-model="searchSloka" ng-click="sloka.setSloka()"></input>
-                                            <button ng-click="sloka.setSloka();" onclick="stopPlay();" class="btn btn-default btn-sm" 
-                                                ng-disabled="!{{sloka.isInputValid()}}">
-                                                <span class="glyphicon glyphicon-search"></span>
+                                            <input type="number" style="width:4em;" title="enter a specific sloka"
+                                                min="1" max="{{sloka.getMaxSlokas()}}" id="slokaNum"
+                                                ng-model="searchSloka"></input>
+                                        </td>
+                                        <td>
+                                            <button ng-click="sloka.setSloka();" onclick="stopPlay();" title="Move to a specific sloka"
+                                                aria-label="Center Align" class="btn btn-default btn-sm"
+                                                style="font-size:8px" ng-disabled="!{{sloka.isInputValid()}}">
+                                                <span style="line-height: 8px"
+                                                    class="glyphicon glyphicon-search"></span>
                                             </button>
-
                                         </td>
                                     </tr>
                                 </tbody>
