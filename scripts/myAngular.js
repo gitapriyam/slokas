@@ -81,12 +81,12 @@
             },
 
             getSlokaAudioURL: function () {
-                var chapName = self.resourceUrl + "/chap" + self.getFormattedNumber(self.chapter);
-                return chapName + "/" + self.getFormattedNumber(self.chapter) + "-" + self.getFormattedNumber(self.sloka) + ".mp3";
+                var chapName = "chap" + self.getFormattedNumber(self.chapter);
+                return self.resourceUrl + "/" + chapName + "/" + self.getFormattedNumber(self.chapter) + "-" + self.getFormattedNumber(self.sloka) + ".mp3";
             },
 
             getChapterAudioURL: function () {
-                var chapName = self.resourceUrl + "/chap" + self.getFormattedNumber(self.chapter);
+                var chapName = "chap" + self.getFormattedNumber(self.chapter);
                 var mp3Audio = chapName;
                 if (self.chapter == 0) {
                     mp3Audio = "dhyanam";
@@ -95,7 +95,7 @@
                     mp3Audio = "mahatmyam";
                 }
 
-                return chapName + "/" + mp3Audio + ".mp3";
+                return self.resourceUrl + "/" + chapName + "/" + mp3Audio + ".mp3";
             }
         }
     });
@@ -223,7 +223,7 @@
             if (!self.isInputValid()) {
                 return;
             }
-            
+
             chapterService.setSloka($scope.searchSloka);
             self.setCookie();
             self.fetchData();
