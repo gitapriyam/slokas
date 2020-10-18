@@ -16,8 +16,8 @@
     <script src="../scripts/angular.js" type="text/javascript"></script>
     <script src="../scripts/angular-resource.js" type="text/javascript"></script>
     <script src="../scripts/angular-cookies.js" type="text/javascript"> </script>
-    <script src="../scripts/myAngular.js" type="text/javascript"> </script>
-    <script src="../scripts/app.js" type="text/javascript"> </script>
+    <script src="scripts/gita.js" type="text/javascript"> </script>
+    <script src="scripts/app.js" type="text/javascript"> </script>
 
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 479px)"
@@ -125,9 +125,10 @@
                                                 ng-model="searchSloka"></input>
                                         </td>
                                         <td>
-                                            <button ng-click="sloka.setSloka();" onclick="stopPlay();" title="Move to a specific sloka"
-                                                aria-label="Center Align" class="btn btn-default btn-sm"
-                                                style="font-size:8px" ng-disabled="!{{sloka.isInputValid()}}">
+                                            <button ng-click="sloka.setSloka();" onclick="stopPlay();"
+                                                title="Move to a specific sloka" aria-label="Center Align"
+                                                class="btn btn-default btn-sm" style="font-size:8px"
+                                                ng-disabled="!{{sloka.isInputValid()}}">
                                                 <span style="line-height: 8px"
                                                     class="glyphicon glyphicon-search"></span>
                                             </button>
@@ -236,10 +237,33 @@
                                                 </p>
                                                 <p>
                                                 <ul>
-                                                    <li> <a ng-href="{{sloka.getChapterAudioURL()}}"
-                                                            target="_blank">Download Chapter Audio</a> </li>
                                                     <li> <a ng-href="{{sloka.getSlokaAudioURL()}}"
                                                             target="_blank">Download Sloka Audio</a> </li>
+                                                    <li> <a ng-href="{{sloka.getChapterAudioURL()}}"
+                                                            target="_blank">Download Chapter Audio</a> </li>
+                                                </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion5" href="#collapse6">
+                                                    <u>Document</u>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse6" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>
+                                                    This is the annotated version of the slokas.
+                                                    This has been downloaded from prapatti.com
+                                                </p>
+                                                <p>
+                                                <ul>
+                                                    <li> <a ng-href="{{sloka.getChapterDocURL()}}"
+                                                            target="_blank">View Chapter Slokas</a> </li>
                                                 </ul>
                                                 </p>
                                             </div>

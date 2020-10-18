@@ -34,6 +34,17 @@
             self.sloka = 1;
         };
 
+        self.getChapterResource = function (input) {
+            var chapName = "chap" + self.getFormattedNumber(self.chapter);
+            if (self.chapter == 0) {
+                chapName = "dhyanam";
+            }
+            else if (self.chapter == 19) {
+                chapName = "mahatmyam";
+            }
+            return self.resourceUrl + "/" + chapName + "/" + chapName + input;
+        }
+
         return {
             getResourceUrl() {
                 return self.resourceUrl;
@@ -85,17 +96,12 @@
                 return self.resourceUrl + "/" + chapName + "/" + self.getFormattedNumber(self.chapter) + "-" + self.getFormattedNumber(self.sloka) + ".mp3";
             },
 
-            getChapterAudioURL: function () {
-                var chapName = "chap" + self.getFormattedNumber(self.chapter);
-                var mp3Audio = chapName;
-                if (self.chapter == 0) {
-                    mp3Audio = "dhyanam";
-                }
-                else if (self.chapter == 19) {
-                    mp3Audio = "mahatmyam";
-                }
+            getChapterDocURL: function () {
+                return self.getChapterResource(".pdf");
+            },
 
-                return self.resourceUrl + "/" + chapName + "/" + mp3Audio + ".mp3";
+            getChapterAudioURL: function () {
+                return self.getChapterResource(".mp3");
             }
         }
     });
@@ -312,6 +318,10 @@
 
         self.getChapterAudioURL = function () {
             return chapterService.getChapterAudioURL();
+        }
+
+        self.getChapterDocURL = function () {
+            return chapterService.getChapterDocURL();
         }
 
         self.init();
