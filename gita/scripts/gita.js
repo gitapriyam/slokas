@@ -36,13 +36,14 @@
 
         self.getChapterResource = function (input) {
             var chapName = "chap" + self.getFormattedNumber(self.chapter);
+            var resourceName = chapName;
             if (self.chapter == 0) {
-                chapName = "dhyanam";
+                resourceName = "dhyanam";
             }
             else if (self.chapter == 19) {
-                chapName = "mahatmyam";
+                resourceName = "mahatmyam";
             }
-            return self.resourceUrl + "/" + chapName + "/" + chapName + input;
+            return self.resourceUrl + "/" + chapName + "/" + resourceName + input;
         }
 
         return {
