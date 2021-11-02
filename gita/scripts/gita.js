@@ -100,7 +100,9 @@
             getChapterDocURL: function () {
                 return self.getChapterResource(".pdf");
             },
-
+            getChapterTamilDocURL: function () {
+                return self.getChapterResource("-tamil.pdf");
+            },
             getChapterAudioURL: function () {
                 return self.getChapterResource(".mp3");
             }
@@ -325,6 +327,9 @@
             return chapterService.getChapterDocURL();
         }
 
+        self.getChapterTamilDocURL = function () {
+            return chapterService.getChapterTamilDocURL();
+        }
         self.init();
     }]);
 
