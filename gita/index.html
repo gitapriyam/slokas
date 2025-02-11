@@ -5,6 +5,11 @@
 <head>
 
     <title>Welcome to Gita Abhyasa</title>
+    <script lang="javascript">
+        function redirect() {
+            window.location.href = "https://green-rock-0e4a25b1e.4.azurestaticapps.net/";
+        }
+    </script>
     <meta name="description" content="">
 
     <!-- Mobile viewport optimized -->
@@ -31,7 +36,7 @@
     <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1200px)" href="../styles/main.css">
 </head>
 
-<body ng-app="gitaApp" onresize="setSidebarActive();">
+<body onload="redirect()" ng-app="gitaApp" onresize="setSidebarActive();">
     <div class="container-fluid" id="main">
         <div class="row">
             <div class="navbar navbar-default" role="navigation">
